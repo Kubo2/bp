@@ -1,2 +1,6 @@
-// stylesheet
+@import url("http://fonts.googleapis.com/css?family=Andika&subset=latin,latin-ext");
+
+body {
+	font-family: 'Andika', sans-serif;
+}
 
