@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<base href="pictures/">
+<title>Buckingham Palace</title>
+<h1>Buckingham Palace</h1>
+<img style="width:100%;height:100%" src="buckingham-palace-front.jpg" id="current-slide">
+<!--img style="opacity:0" src="queen-smiley.jpg" id="next-slide"-->
+<style scoped>
+img {
+	width: 100%;
+	max-width: 100% !!important;
+}
+</style><script>
+document.onkeydown = (function(){
+	var 
+		heading = document.getElementsByTagName('h1')[0],
+		cslide = document.getElementById('current-slide'),
+		//nslide = document.getElementById('next-slide'),
+		current = 0;
+
+	var udaje = 
+	[
+		{
+			title: "Buckingham Palace",
+			imgpath: "buckingham-palace-front.jpg"
+		},
+		{
+			title: "Queen of Great Britain",
+			imgpath: "queen-smiley.jpg"
+		}
+	]
+
+	return function(e) {
+		var event = window.event || e;
+		var key = event.keyCode;
+		// not any of both arrows
+		if(key != 37 && key != 39) return;
+		// there is not prev or next slide
+		if(key == 37 && !udaje[current - 1] || key == 39 && !udaje[current + 1]) return;
+		// only one of both arrows
+		var view = (key == 37 ? --current : ++current);
+
+		document.title = heading.innerHTML = udaje[view].title;
+		cslide.src = udaje[view].imgpath;
+		//nslide.src = udaje[view+1].imgpath;
+	}
+})()
+</script>

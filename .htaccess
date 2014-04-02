@@ -1,3 +1,2 @@
-AddType text/css .style .css
 ExpiresByType image/jpeg A3600
 ExpiresByType image/jpg A3600
