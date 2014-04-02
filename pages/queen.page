@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="author" content="Jakub Kubíček">
+<title>Buckingham Palace</title>
+<link href="styles/bp.style" rel="stylesheet">
+<link rel="canonical" href="./?sp=queen">
+
+<article>
+	<h1>Queen</h1>
+	<figure id="snapshot">
+		<img width="468" height="632" src="pictures/queen-smiley.jpg">
+		<legend>British Queen Elizabeth II.</legend>
+	</figure>
+	<button id="toggle-text">Show text</button>
+	<section id="text" class="hide">
+		
+	</section>
+	<!-- navigation -->
+	<button class="nav prev" id="psp">
+		<a href="?">&lsaquo; Previous snapshot</a>
+	</button>
+	<button class="nav next" id="nsp">
+		<a href="?sp=balcony">Next snapshot &rsaquo;</a>
+	</button>
+</article>
+<script src="scripts/bp.js"></script>
