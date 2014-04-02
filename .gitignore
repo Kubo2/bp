@@ -1,3 +1,6 @@
 # ignores all sublime workspaces and projects located under this folder #
 *.sublime-project
 *.sublime-workspace
+
+# to ignore temp stuff / podklady #
+tmp/
