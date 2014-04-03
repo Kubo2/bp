@@ -1,0 +1,6 @@
+
+Options +Indexes
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^.*bot.*$ [NC]
+RewriteRule . - [F,L]
