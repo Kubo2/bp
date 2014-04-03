@@ -4,8 +4,6 @@
 <script>void((new Image()).src='queen-smiley.jpg')</script>
 <title>Buckingham Palace</title>
 <h1>Buckingham Palace</h1>
-<!--img src="buckingham-palace-front.jpg" id="current-slide"-->
-<!--img style="opacity:0" src="queen-smiley.jpg" id="next-slide"-->
 <style scoped>
 @import "http://fonts.googleapis.com/css?family=Andika&subset=latin,latin-ext";
 h1 {
@@ -20,45 +18,14 @@ body {
 	font-family: "Andika", "Times New Roman";
 	text-align: center;
 }
-/*img {
-	max-width: 100%;
-	max-height: 100%;
-	margin: 0 auto;
-	opacity: 1;
-	transition: opacity .23s;
-}
-img.invisible {
-	opacity: 0;
-	transition: opacity .2s;
-}*/
 </style><script>
-// set image width and height to viewport resolution
-//document.images[0].width = document.documentElement.clientWidth;
-//slide.height = document.documentElement.clientHeight;
-
-/*function naturalResolution(imgElement) {
-	if(typeof(imgElement.naturalWidth) != 'undefined' && typeof(imgElement.naturalHeight) != 'undefined') {
-		return {
-			width: imgElement.naturalWidth,
-			height: imgElement.naturalHeight
-		}
-	}
-	// there are no natural* properties
-	var realImage = new Image();
-	realImage.src = imgElement.src;
-	return {
-		width: realImage.width,
-		height: realImage.height
-	}
-}*/
-
 document.onkeydown = (function(){
 	var 
 		heading = document.getElementsByTagName('h1')[0],
-		cslide = document.body;
-		//nslide = document.getElementById('next-slide'),
+		cslide = document.body,
 		current = 0;
 
+	// data to present
 	var udaje= 
 	[
 		{
@@ -109,24 +76,11 @@ document.onkeydown = (function(){
 		// only one of both arrows
 		var view = (key == 37 ? --current : ++current);
 
-		/*cslide.onload = (function(){
-			document.title = heading.innerHTML = udaje[view].title;
-			window.setTimeout(function(){
-				cslide.className = cslide.className.replace('invisible', '');
-			}, 280);
-		})*/
-		//cslide.className += ' invisible';
 		cslide.style.backgroundImage = "url(" + udaje[view].imgpath +")";
 		// preloading of next slide
 		if(udaje[view + 1]) (new Image()).src = udaje[view + 1].imgpath;
-		//cslide.style.backgroundImage = "url(provisional-loading.gif)";
 		document.title = heading.innerHTML = udaje[view].title;
-		//nslide.src = udaje[view+1].imgpath;
-		/*if(naturalResolution(cslide).width < document.documentElement.clientWidth / 3 * 2) {
-			cslide.width = naturalResolution(cslide).width;
-		} else {
-			cslide.width = document.documentElement.clientWidth;
-		}*/
+		//location.hash = "slide-" + view.toString();
 	}
 })()
 </script>
