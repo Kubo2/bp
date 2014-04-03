@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <base href="pictures/">
+<script>void((new Image()).src='queen-smiley.jpg')</script>
 <title>Buckingham Palace</title>
 <h1>Buckingham Palace</h1>
 <!--img src="buckingham-palace-front.jpg" id="current-slide"-->
@@ -71,6 +72,30 @@ document.onkeydown = (function(){
 		{
 			title: "Queen's Gallery",
 			imgpath: "queens-gallery.jpg"
+		},
+		{
+			title: "Queen's Guards",
+			imgpath: "guard-changing.jpg"
+		},
+		{
+			title: "Buckingham Palace Balcony",
+			imgpath: "buckingham-palace-balcony.jpg"
+		},
+		{
+			title: "Buckingham Palace Gardens",
+			imgpath: "gardens-area.jpg"
+		},
+		{
+			title: "Road in Gardens",
+			imgpath: "gardens-road.jpg"
+		},
+		{
+			title: "Lake View - Inner of Gardens",
+			imgpath: "secret-lake-view.jpg"
+		},
+		{
+			title: "Thanks for your attention",
+			imgpath: "guck-mal.png"
 		}
 	]
 
@@ -90,8 +115,11 @@ document.onkeydown = (function(){
 				cslide.className = cslide.className.replace('invisible', '');
 			}, 280);
 		})*/
-		cslide.className += ' invisible';
+		//cslide.className += ' invisible';
 		cslide.style.backgroundImage = "url(" + udaje[view].imgpath +")";
+		// preloading of next slide
+		if(udaje[view + 1]) (new Image()).src = udaje[view + 1].imgpath;
+		//cslide.style.backgroundImage = "url(provisional-loading.gif)";
 		document.title = heading.innerHTML = udaje[view].title;
 		//nslide.src = udaje[view+1].imgpath;
 		/*if(naturalResolution(cslide).width < document.documentElement.clientWidth / 3 * 2) {
